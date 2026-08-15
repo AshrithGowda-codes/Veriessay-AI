@@ -1,105 +1,105 @@
-Veriessay-AI
+# Veriessay-AI
 
-Veriessay-AI is an AI-powered admissions essay analysis platform designed to evaluate essays for AI-generated content, writing quality, linguistic patterns, and overall authenticity.
+Veriessay-AI is an AI-powered admission essay analysis platform designed to evaluate essays using linguistic analysis, scoring techniques, and local AI models.
 
-The system combines a FastAPI backend, React + TypeScript frontend, local text-analysis services, and an admissions-essay dataset.
+## Features
 
-🚀 Features
-AI-generated text detection
-Essay scoring and analysis
-Sentence-level analysis
-Text pattern analysis
-Explainable detection results
-Essay history
-Reports dashboard
-Metrics overview
-Segment-level analysis
-Local model analysis
-Admissions essay dataset
-React-based modern dashboard
-🏗️ Architecture
+- AI-powered essay analysis
+- Admission essay scoring
+- Text quality and linguistic analysis
+- Sentence-level analysis
+- Segment highlighting
+- Explanation panel for detected issues
+- Essay history
+- Reports and metrics dashboard
+- Local model analysis support
+- Dataset-based experimentation
+- React + TypeScript frontend
+- FastAPI backend
+- SQLite database
+
+## Project Architecture
+
+```text
 Veriessay-AI/
 │
 ├── backend/
 │   ├── app/
 │   │   ├── api/
+│   │   │   └── routes.py
 │   │   ├── core/
+│   │   │   └── config.py
 │   │   ├── db/
+│   │   │   ├── database.py
+│   │   │   └── models.py
 │   │   ├── schemas/
-│   │   └── services/
+│   │   │   └── essay.py
+│   │   ├── services/
+│   │   │   ├── local_model_analyzer.py
+│   │   │   ├── scoring_engine.py
+│   │   │   └── text_analyzer.py
+│   │   └── main.py
+│   │
 │   ├── requirements.txt
-│   └── run.py
+│   ├── run.py
+│   └── setup.sh
 │
 ├── dataset/
 │   ├── admissions_essay_dataset.csv
 │   ├── admissions_essay_dataset.json
+│   ├── raw_human_essays.csv
+│   ├── raw_human_essays.json
 │   ├── DATASET_CARD.md
-│   └── dataset processing scripts
+│   ├── gather_essays.py
+│   └── generate_variations.py
 │
 ├── frontend/
 │   ├── src/
 │   │   ├── components/
 │   │   ├── services/
 │   │   ├── styles/
-│   │   └── types/
+│   │   ├── types/
+│   │   ├── App.tsx
+│   │   └── main.tsx
+│   ├── index.html
 │   ├── package.json
+│   ├── package-lock.json
+│   ├── tsconfig.json
 │   └── vite.config.ts
 │
 ├── package.json
+├── prompt.md
 ├── start.bat
 ├── start.sh
-└── prompt.md
-🧠 Backend
-
-The backend is built with Python and FastAPI.
-
-Main responsibilities:
-
-REST API
-Essay processing
-Text analysis
-AI-content analysis
-Scoring
-Database management
-Analysis result generation
-Backend services
-local_model_analyzer.py
-scoring_engine.py
-text_analyzer.py
-🎨 Frontend
-
-The frontend uses:
-
+└── README.md
+Technology Stack
+Frontend
 React
 TypeScript
 Vite
 CSS
+Backend
+Python
+FastAPI
+SQLAlchemy
+SQLite
+AI / NLP
+Local AI model analysis
+Text analysis
+Scoring engine
+Dataset-driven evaluation
+Dataset
 
-Main UI modules include:
-
-Essay submission
-Detection dashboard
-Results dashboard
-Essay history
-Reports
-Metrics
-Sentence highlighting
-Segment analysis
-Settings
-Help
-📊 Dataset
-
-The dataset/ directory contains admissions essay data used for analysis and experimentation.
+The dataset/ directory contains admission essay data used for analysis and experimentation.
 
 It includes:
 
-CSV datasets
-JSON datasets
-Human-written essay data
+Human-written essays
+Processed essay datasets
+JSON and CSV formats
 Dataset documentation
-Dataset generation scripts
-Dataset variation generation
-⚙️ Installation
+Essay variation generation scripts
+Installation
 1. Clone the repository
 git clone https://github.com/AshrithGowda-codes/Veriessay-AI.git
 cd Veriessay-AI
@@ -107,35 +107,108 @@ cd Veriessay-AI
 cd backend
 python -m venv venv
 
-Activate the environment on Windows:
+Activate the virtual environment on Windows:
 
 venv\Scripts\activate
 
 Install dependencies:
 
 pip install -r requirements.txt
-3. Start backend
-python run.py
-4. Frontend setup
+3. Frontend setup
 
 Open another terminal:
 
 cd frontend
 npm install
+Running the Application
+Backend
+
+From the backend directory:
+
+python run.py
+Frontend
+
+From the frontend directory:
+
 npm run dev
 
 The Vite development server will provide the frontend URL in the terminal.
 
-🪟 Windows Quick Start
+Quick Start
 
-You can also use:
+For Windows, the project also includes:
 
 start.bat
 
-to start the project using the provided startup script.
+Run:
 
-🔬 Project Goal
+.\start.bat
+Main Components
+Essay Form
 
-Veriessay-AI aims to provide an explainable essay-analysis system rather than relying only on a single binary "AI / Human" prediction.
+Allows users to submit admission essays for analysis.
 
-The system analyzes multiple signals and presents interpretable results to help users understand why an essay received a particular score.
+Detector Dashboard
+
+Provides the main essay analysis interface.
+
+Results Dashboard
+
+Displays analysis results and scoring information.
+
+Sentence Highlighter
+
+Highlights relevant sections and sentences identified during analysis.
+
+Segment Analysis
+
+Provides detailed analysis at the segment level.
+
+Essay History
+
+Stores and displays previous essay analysis results.
+
+Reports
+
+Provides analysis reports and metrics.
+
+Explanation Panel
+
+Provides explanations for detected patterns and scoring results.
+
+Backend Services
+
+The backend contains three primary analysis services:
+
+local_model_analyzer.py
+scoring_engine.py
+text_analyzer.py
+
+These services form the core processing pipeline for essay analysis.
+
+Project Status
+
+🚧 Active Development
+
+Veriessay-AI is currently under development. Features, models, scoring methods, and UI components may continue to evolve.
+
+Future Improvements
+Improved AI detection and classification
+Advanced NLP models
+Better essay scoring
+More detailed feedback generation
+Model benchmarking
+Authentication and user management
+Cloud deployment
+Advanced analytics
+Improved report generation
+License
+
+This project is currently intended for educational, research, and development purposes.
+
+Author
+
+Ashrith Gowda
+
+GitHub:
+https://github.com/AshrithGowda-codes
